@@ -1,0 +1,2905 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manual Power Pet</title>
+
+    <meta name="description" content="APRENDA CÓMO FACTURAR AL MENOS MIL DÓLARES AL MES CON DELICIOSAS RECETAS DE GALLETAS CASERAS PARA MASCOTAS">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    
+
+    <style>
+
+        /* Core Variables */
+
+        :root {
+
+            --bg-dark: #121212;
+
+            --bg-light: #F4F4F4;
+
+            --text-dark: #121212;
+
+            --text-light: #F4F4F4;
+
+            --font-sans: 'Montserrat', sans-serif;
+
+            --transition-smooth: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+        }
+
+
+
+        /* Reset */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        body {
+
+            font-family: var(--font-sans);
+
+            background-color: var(--bg-dark);
+
+            color: var(--text-dark);
+
+            overflow-x: hidden;
+
+            -webkit-font-smoothing: antialiased;
+
+        }
+
+
+
+        a {
+
+            text-decoration: none;
+
+            color: inherit;
+
+        }
+
+
+
+        ul {
+
+            list-style: none;
+
+        }
+
+
+
+        /* Preloader */
+
+        #preloader {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100vw;
+
+            height: 100vh;
+
+            background-color: var(--bg-dark);
+
+            z-index: 9999;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: opacity 1s ease-out, visibility 1s ease-out;
+
+        }
+
+
+
+        .preloader-text-container {
+
+            position: relative;
+
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+
+        .preloader-text {
+
+            position: absolute;
+
+            font-family: var(--font-sans);
+
+            color: var(--text-light);
+
+            font-size: 1.3rem;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            opacity: 0;
+
+            transform: translateY(20px);
+
+            transition: opacity 0.5s ease, transform 0.5s ease;
+
+        }
+
+
+
+        .preloader-text.active {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+
+
+        /* BOTÃO UNIVERSAL CIANO */
+
+        .btn-cyan-massive {
+
+            background-color: #01bd94 !important;
+
+            color: #000000 !important;
+
+            padding: 16px 20px !important;
+
+            font-size: 0.95rem !important;
+
+            font-weight: 800 !important;
+
+            width: 100%;
+
+            max-width: 340px;
+
+            box-shadow: 0 6px 20px rgba(1, 189, 148, 0.3);
+
+            border-radius: 50px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            margin: 0 auto;
+
+            border: none;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            line-height: 1.3;
+
+            transition: transform 0.2s ease;
+
+        }
+
+
+
+        .btn-cyan-massive:active {
+
+            transform: scale(0.95);
+
+        }
+
+
+
+        /* Layout Utilities & Centralization */
+
+        .container {
+
+            padding: 40px 15px;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .mt-2 { margin-top: 15px; }
+
+        .mt-4 { margin-top: 30px; }
+
+
+
+        .light-bg {
+
+            background-color: var(--bg-light);
+
+            color: var(--text-dark);
+
+            text-align: center;
+
+        }
+
+
+
+        .dark-bg {
+
+            background-color: var(--bg-dark);
+
+            color: var(--text-light);
+
+            text-align: center;
+
+        }
+
+
+
+        /* Stacking Sections */
+
+        .stack-container {
+
+            position: relative;
+
+        }
+
+
+
+        .stack-section {
+
+            position: relative;
+
+            min-height: 100vh;
+
+            z-index: 1;
+
+            background-color: var(--bg-light);
+
+            position: sticky;
+
+            top: 0;
+
+        }
+
+
+
+        /* Hero Section */
+
+        #hero {
+
+            height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            padding: 40px 20px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            z-index: 0;
+
+        }
+
+
+
+        .hero-bg {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 120%;
+
+            z-index: -2;
+
+            overflow: hidden;
+
+        }
+
+        .hero-bg video {
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            min-width: 100%;
+
+            min-height: 100%;
+
+            width: auto;
+
+            height: auto;
+
+            object-fit: cover;
+
+        }
+
+
+
+        .hero-overlay {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+
+            z-index: -1;
+
+        }
+
+
+
+        .hero-content {
+
+            color: var(--text-light);
+
+            margin-bottom: 30px;
+
+            text-align: left;
+
+            width: 100%;
+
+            max-width: 260px;
+
+        }
+
+
+
+        .hero-subtitles {
+
+            font-family: var(--font-sans);
+
+            text-transform: uppercase;
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+
+            color: #01bd94;
+
+        }
+
+
+
+        .hero-title {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.25rem;
+
+            line-height: 1.3;
+
+            font-weight: 800;
+
+        }
+
+
+
+        .scroll-indicator {
+
+            position: absolute;
+
+            bottom: 20px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: var(--text-light);
+
+            font-size: 0.7rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            font-weight: 700;
+
+            animation: bounce 2s infinite;
+
+        }
+
+
+
+        @keyframes bounce {
+
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+
+            40% { transform: translateY(-10px) translateX(-50%); }
+
+        }
+
+
+
+        /* Typography */
+
+        .large-text {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.8rem;
+
+            font-weight: 800;
+
+            line-height: 1.2;
+
+            text-transform: uppercase;
+
+        }
+
+
+
+        .medium-text {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.2rem;
+
+            line-height: 1.6;
+
+            color: #222;
+
+            max-width: 340px;
+
+            margin: 0 auto;
+
+            font-weight: 500;
+
+        }
+
+
+
+        .section-title {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.35rem;
+
+            font-weight: 800;
+
+            margin-bottom: 30px;
+
+            text-align: center;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            line-height: 1.3;
+
+        }
+
+
+
+        /* Carousel Main Layout */
+
+        #services {
+
+            background-color: #000000 !important;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+
+        /* =============================================
+           CORREÇÃO DO BUG VISUAL NAS LATERAIS
+           O carousel-container-relative "sangra" para
+           fora do padding do .container (15px de cada lado),
+           eliminando os vãos brancos nas laterais.
+           ============================================= */
+
+        .carousel-container-relative {
+
+            position: relative;
+
+            width: calc(100% + 30px);
+
+            margin-left: -15px;
+
+            margin-right: -15px;
+
+        }
+
+
+
+        .carousel-wrapper {
+
+            overflow: hidden;
+
+            width: 100%;
+
+            cursor: grab;
+
+            padding-left: 15px; /* Compensação: primeiro card começa alinhado ao conteúdo */
+
+        }
+
+
+
+        .carousel-track {
+
+            display: flex;
+
+            transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+
+            will-change: transform;
+
+        }
+
+
+
+        .service-card {
+
+            background-color: #01bd94;
+
+            padding: 24px 20px;
+
+            border-radius: 20px;
+
+            width: 86%;
+
+            flex-shrink: 0;
+
+            margin-right: 15px;
+
+            text-align: center;
+
+            color: #ffffff;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+
+        }
+
+
+
+        .service-img {
+
+            width: 100%;
+
+            height: auto;
+
+            aspect-ratio: 1 / 1;
+
+            border-radius: 12px;
+
+            background-size: cover;
+
+            background-position: center;
+
+            margin-bottom: 18px;
+
+        }
+
+
+
+        .service-title {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.15rem;
+
+            font-weight: 800;
+
+            margin-bottom: 10px;
+
+            color: #ffffff;
+
+            line-height: 1.3;
+
+        }
+
+
+
+        .service-desc {
+
+            font-family: var(--font-sans);
+
+            font-size: 1rem;
+
+            line-height: 1.5;
+
+            color: #000000;
+
+            font-weight: 500;
+
+        }
+
+
+
+        /* Single Floating Next Arrow */
+
+        .single-next-arrow {
+
+            position: absolute;
+
+            right: 0px;
+
+            top: 40%;
+
+            transform: translateY(-50%);
+
+            background: rgba(18, 18, 18, 0.9);
+
+            border: 2px solid #ffffff;
+
+            color: #ffffff;
+
+            width: 36px;
+
+            height: 36px;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            z-index: 10;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+
+        }
+
+
+
+        .single-next-arrow svg {
+
+            width: 18px;
+
+            height: 18px;
+
+            fill: currentColor;
+
+        }
+
+
+
+        .single-next-arrow.hidden {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+        }
+
+
+
+        /* Seção Informativa de Nutrição */
+
+        #nutrition {
+
+            background-color: var(--bg-light);
+
+            color: var(--text-dark);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            z-index: 3;
+
+        }
+
+
+
+        .nutrition-title-container {
+
+            width: 100%;
+
+            max-width: 340px;
+
+            margin: 0 auto 25px auto;
+
+            will-change: transform;
+
+            text-align: center;
+
+        }
+
+
+
+        .nutrition-title {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.35rem;
+
+            font-weight: 800;
+
+            color: #e60000;
+
+            text-transform: uppercase;
+
+            line-height: 1.3;
+
+        }
+
+
+
+        .nutrition-desc {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.2rem;
+
+            font-weight: 500;
+
+            line-height: 1.6;
+
+            color: #000000;
+
+            max-width: 340px;
+
+            margin: 0 auto;
+
+            text-align: center;
+
+            opacity: 0;
+
+            will-change: opacity, transform;
+
+        }
+
+
+
+        /* Seção: ¿QUÉ VAS A APRENDER? */
+
+        #learning {
+
+            height: 180vh;
+
+            position: relative;
+
+            background-color: #000000 !important;
+
+            z-index: 5;
+
+        }
+
+
+
+        .learning-sticky-inner {
+
+            position: sticky;
+
+            top: 0;
+
+            height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background-color: #000000;
+
+            padding: 20px 15px;
+
+            width: 100%;
+
+        }
+
+
+
+        .learning-img-box {
+
+            width: 100%;
+
+            max-width: 170px;
+
+            margin: 0 auto 10px auto;
+
+            text-align: center;
+
+            opacity: 1 !important;
+
+            transform: none !important;
+
+        }
+
+
+
+        .learning-img {
+
+            width: 100%;
+
+            height: auto;
+
+            aspect-ratio: 1 / 1;
+
+            border-radius: 12px;
+
+            object-fit: cover;
+
+        }
+
+
+
+        .learning-title-main {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.25rem;
+
+            font-weight: 800;
+
+            color: #ffffff;
+
+            text-align: center;
+
+            margin-bottom: 15px;
+
+            text-transform: uppercase;
+
+            opacity: 1 !important;
+
+            transform: none !important;
+
+        }
+
+
+
+        .learning-list {
+
+            width: 100%;
+
+            max-width: 340px;
+
+            margin: 0 auto;
+
+            text-align: left;
+
+        }
+
+
+
+        .learning-item {
+
+            font-size: 0.76rem;
+
+            line-height: 1.4;
+
+            color: #ffffff;
+
+            margin-bottom: 8px;
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 6px;
+
+            opacity: 0;
+
+            transform: translateX(-15px);
+
+            will-change: opacity, transform;
+
+            transition: opacity 0.4s ease, transform 0.4s ease;
+
+        }
+
+
+
+        .learning-item span {
+
+            flex-shrink: 0;
+
+        }
+
+
+
+        .learning-btn-box {
+
+            width: 100%;
+
+            max-width: 340px;
+
+            margin: 15px auto 0 auto;
+
+            text-align: center;
+
+            opacity: 0;
+
+            transform: translateY(15px);
+
+            will-change: opacity, transform;
+
+            transition: opacity 0.5s ease, transform 0.5s ease;
+
+        }
+
+
+
+        /* Seção: PROVAS SOCIAIS */
+
+        #testimonials {
+
+            background-color: #01bd94 !important;
+
+            position: relative;
+
+            z-index: 6;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+
+
+        .testimonials-title {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.25rem;
+
+            font-weight: 800;
+
+            color: #000000;
+
+            margin-bottom: 30px;
+
+            text-align: center;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            line-height: 1.3;
+
+        }
+
+
+
+        .proof-img-container {
+
+            width: 86%;
+
+            flex-shrink: 0;
+
+            margin-right: 15px;
+
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            background-color: #ffffff;
+
+        }
+
+
+
+        .proof-img {
+
+            width: 100%;
+
+            height: auto;
+
+            aspect-ratio: 375 / 532;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+
+        .testimonials-arrow {
+
+            position: absolute;
+
+            right: 0px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            background: rgba(0, 0, 0, 0.85);
+
+            border: 2px solid #ffffff;
+
+            color: #ffffff;
+
+            width: 36px;
+
+            height: 36px;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            z-index: 12;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+
+        }
+
+
+
+        .testimonials-arrow svg {
+
+            width: 18px;
+
+            height: 18px;
+
+            fill: currentColor;
+
+        }
+
+
+
+        .testimonials-arrow.hidden {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+        }
+
+
+
+        /* ==========================================
+
+             SEÇÃO SUPER BÔNUS
+
+         ========================================== */
+
+        #bonus-section {
+
+            background-color: #01bd94 !important;
+
+            position: relative;
+
+            z-index: 7;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+
+
+        .bonus-inner-content {
+
+            width: 100%;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transform: translateY(20px);
+
+            transition: opacity 0.6s ease, transform 0.6s ease;
+
+        }
+
+
+
+        .bonus-title {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.25rem;
+
+            font-weight: 800;
+
+            color: #000000;
+
+            margin-bottom: 35px;
+
+            text-align: center;
+
+            text-transform: uppercase;
+
+            line-height: 1.3;
+
+        }
+
+
+
+        .bonus-card {
+
+            background-color: #000000 !important; 
+
+            padding: 24px 20px; 
+
+            border-radius: 20px;
+
+            width: 86%;
+
+            flex-shrink: 0;
+
+            margin-right: 15px;
+
+            text-align: center;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        }
+
+
+
+        .bonus-card .service-img {
+
+            width: 100%;
+
+            height: auto;
+
+            aspect-ratio: 1 / 1;
+
+            border-radius: 12px;
+
+            background-size: cover;
+
+            background-position: center;
+
+            margin-bottom: 15px;
+
+        }
+
+
+
+        .bonus-card .service-title {
+
+            color: #01bd94 !important;
+
+            font-size: 1rem; 
+
+            margin-bottom: 8px;
+
+            font-weight: 800;
+
+        }
+
+
+
+        .bonus-card .service-desc {
+
+            color: #ffffff !important;
+
+            font-size: 0.8rem; 
+
+            line-height: 1.4;
+
+        }
+
+
+
+        /* ==========================================
+
+             SEÇÃO PREÇO E RISCO (#pricing-reveal)
+
+         ========================================== */
+
+        #pricing-reveal {
+
+            background-color: var(--bg-light);
+
+            color: var(--text-dark);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            z-index: 8;
+
+        }
+
+
+
+        .price-old-wrapper {
+
+            display: flex;
+
+            justify-content: center;
+
+            width: 100%;
+
+        }
+
+
+
+        .price-old {
+
+            font-family: var(--font-sans);
+
+            font-size: 2.3rem;
+
+            font-weight: 800;
+
+            color: #e60000; 
+
+            text-transform: uppercase;
+
+            text-align: center;
+
+            margin-bottom: 10px;
+
+            transform: scale(1.4);
+
+            will-change: transform;
+
+            position: relative;
+
+            display: inline-block; 
+
+        }
+
+
+
+        .price-old-line {
+
+            position: absolute;
+
+            left: 0;
+
+            top: 50%;
+
+            width: 0%; 
+
+            height: 4px;
+
+            background-color: #e60000;
+
+            transform: translateY(-50%);
+
+            transition: width 0.3s ease-in-out; 
+
+            will-change: width;
+
+            border-radius: 2px;
+
+        }
+
+
+
+        .price-new {
+
+            font-family: var(--font-sans);
+
+            font-size: 2.8rem; 
+
+            font-weight: 800;
+
+            color: #01bd94;
+
+            text-transform: uppercase;
+
+            text-align: center;
+
+            line-height: 1.1;
+
+            margin-bottom: 25px;
+
+            opacity: 0;
+
+            transform: translateY(20px);
+
+            will-change: opacity, transform;
+
+            transition: opacity 0.5s ease, transform 0.5s ease;
+
+        }
+
+
+
+        .checkout-box {
+
+            width: 100%;
+
+            max-width: 340px;
+
+            margin: 0 auto;
+
+            text-align: center;
+
+            opacity: 0;
+
+            transform: translateY(20px);
+
+            will-change: opacity, transform;
+
+            transition: opacity 0.5s ease, transform 0.5s ease;
+
+        }
+
+
+
+        .trust-badge {
+
+            width: 300px;
+
+            height: 28px; 
+
+            object-fit: contain;
+
+            margin: 15px auto;
+
+            display: block;
+
+        }
+
+
+
+        .guarantee-badge {
+
+            width: 110px;
+
+            height: 110px;
+
+            aspect-ratio: 1 / 1; 
+
+            object-fit: contain;
+
+            margin: 25px auto 12px auto;
+
+            display: block;
+
+        }
+
+
+
+        .guarantee-title {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.15rem;
+
+            font-weight: 800;
+
+            color: #01bd94; 
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .guarantee-desc {
+
+            font-family: var(--font-sans);
+
+            font-size: 0.9rem;
+
+            line-height: 1.5;
+
+            color: #000000; 
+
+            max-width: 320px;
+
+            margin: 0 auto;
+
+            font-weight: 500;
+
+        }
+
+
+
+        /* ==========================================
+
+             NOVA SEÇÃO: FAQ (Preguntas Frecuentes)
+
+         ========================================== */
+
+        #faq {
+
+            background-color: #000000 !important;
+
+            color: #ffffff;
+
+            z-index: 9;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+
+
+        .faq-title {
+
+            font-family: var(--font-sans);
+
+            font-size: 1.35rem;
+
+            font-weight: 800;
+
+            margin-bottom: 30px;
+
+            text-align: center;
+
+            text-transform: uppercase;
+
+            color: #ffffff;
+
+        }
+
+
+
+        .faq-list {
+
+            width: 100%;
+
+            max-width: 600px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .faq-item {
+
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+
+            text-align: left;
+
+        }
+
+
+
+        .faq-question {
+
+            padding: 20px 0;
+
+            font-family: var(--font-sans);
+
+            font-size: 0.95rem;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            color: #ffffff;
+
+            transition: color 0.3s ease;
+
+            line-height: 1.4;
+
+        }
+
+
+
+        .faq-question:hover {
+
+            color: #01bd94;
+
+        }
+
+
+
+        .faq-icon {
+
+            font-size: 1.8rem;
+
+            font-weight: 400;
+
+            line-height: 1;
+
+            transition: transform 0.4s ease;
+
+            color: #01bd94;
+
+            flex-shrink: 0;
+
+            margin-left: 15px;
+
+        }
+
+
+
+        .faq-answer {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: max-height 0.4s ease;
+
+        }
+
+
+
+        .faq-answer p {
+
+            padding-bottom: 20px;
+
+            font-family: var(--font-sans);
+
+            font-size: 0.9rem;
+
+            line-height: 1.5;
+
+            color: #cccccc;
+
+            font-weight: 500;
+
+        }
+
+
+
+        .faq-item.active .faq-icon {
+
+            transform: rotate(45deg);
+
+        }
+
+
+
+        /* ==========================================
+
+             BOTÃO WHATSAPP FLUTUANTE (AJUSTADO)
+
+         ========================================== */
+
+        .whatsapp-float {
+
+            position: fixed;
+
+            width: 50px;
+
+            height: 50px; 
+
+            bottom: 25px;
+
+            right: 25px;
+
+            background-color: #25d366;
+
+            color: #FFF;
+
+            border-radius: 50px;
+
+            text-align: center;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+            z-index: 100;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: scale(0.8) translateY(20px);
+
+            transition: all 0.4s ease;
+
+        }
+
+
+
+        .whatsapp-float.visible {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: scale(1) translateY(0);
+
+        }
+
+
+
+        .whatsapp-float svg {
+
+            width: 26px;
+
+            height: 26px;
+
+            fill: currentColor;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div id="preloader">
+
+        <div class="preloader-text-container">
+
+            <h1 class="preloader-text" id="preloaderText1">Manual Power Pet</h1>
+
+        </div>
+
+    </div>
+
+
+
+    <main class="stack-container">
+
+        
+
+        <section class="section stack-section" id="hero">
+
+            <div class="hero-bg">
+            <video autoplay muted loop playsinline preload="auto">
+                <source src="assets/a0.mp4" type="video/mp4">
+            </video>
+        </div>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <div class="hero-subtitles blur-reveal">
+
+                    <span>Manual Power Pet</span>
+
+                </div>
+
+                <h1 class="hero-title blur-reveal fade-up" style="transition-delay: 0.2s">APRENDA CÓMO FACTURAR <span style="color: #01bd94;">AL MENOS MIL DÓLARES AL MES</span> CON DELICIOSAS RECETAS DE GALLETAS CASERAS PARA MASCOTAS</h1>
+
+            </div>
+
+            <div class="scroll-indicator">ver más</div>
+
+        </section>
+
+
+
+        <section class="section stack-section light-bg" id="intro">
+
+            <div class="container">
+
+                <p class="large-text blur-reveal" style="font-size: 60px;"><span style="color: #e60000;">¡Gran</span></p>
+
+               <p class="large-text blur-reveal" style="font-size: 25px;"><span style="color: #e60000;">Oportunidad!</span></p>
+
+                <p class="medium-text blur-reveal mt-2">¿Sabías que <b>el mercado de mascotas creció un 75% solo este año?</b> La búsqueda de diferentes formas de prolongar aún más la vida de los animalitos se ha convertido en <b>una verdadera tendencia.</b></p>
+
+                
+
+                <div class="mt-4 blur-reveal">
+
+                    <a href="https://pay.hotmart.com/C105838881B?checkoutMode=10" target="_blank" class="btn-cyan-massive">¡QUIERO APRENDER!</a>
+                               <img src="assets/a24.png" alt="Logo" style="max-width: 140px; width: 100%; margin-top: 18px; display: block; margin-left: auto; margin-right: auto;">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section stack-section dark-bg" id="services">
+
+            <div class="container">
+
+                <h2 class="section-title blur-reveal" style="color: #ffffff;">VEA TODO A LO QUE TENDRÁ ACCESO:</h2>
+
+                
+
+                <div class="carousel-container-relative">
+
+                    
+
+                    <div class="carousel-wrapper blur-reveal" id="carouselWrapper">
+
+                        <div class="carousel-track" id="carouselTrack">
+
+                            
+
+                            <div class="service-card">
+
+                                <div class="service-img" style="background-image: url('assets/a21.webp')"></div>
+
+                                <h3 class="service-title">Recetas de Snacks para Mascotas</h3>
+
+                                <p class="service-desc">Aprende recetas paso a paso, fáciles de preparar y muy deliciosas, incluso si no sabes nada de cocina ni de mascotas.</p>
+
+                            </div>
+
+
+
+                            <div class="service-card">
+
+                                <div class="service-img" style="background-image: url('assets/a14.webp')"></div>
+
+                                <h3 class="service-title">Snacks para tu Gato</h3>
+
+                                <p class="service-desc">Aprenderás, de principio a fin, cómo preparar snacks maravillosos, incluso si nunca los has hecho en tu vida. ¡A tu gato le van a encantar!</p>
+
+                            </div>
+
+
+
+                            <div class="service-card">
+
+                                <div class="service-img" style="background-image: url('assets/a17.webp')"></div>
+
+                                <h3 class="service-title">Alimentos y Medicamentos Prohibidos</h3>
+
+                                <p class="service-desc">Descubre cuáles son los ingredientes y medicamentos que pueden afectar la vida de las mascotas y provocar enfermedades graves.</p>
+
+                            </div>
+
+
+
+                            <div class="service-card">
+
+                                <div class="service-img" style="background-image: url('assets/a19.webp')"></div>
+
+                                <h3 class="service-title">La importancia de una alimentación saludable</h3>
+
+                                <p class="service-desc">Te enseñaremos cómo prolongar aún más la vida de los animalitos con una alimentación rica y equilibrada.</p>
+
+                            </div>
+
+
+
+                            <div class="service-card">
+
+                                <div class="service-img" style="background-image: url('assets/a20.webp')"></div>
+
+                                <h3 class="service-title">Alimentos Caseros para Animales</h3>
+
+                                <p class="service-desc">Aprende todo lo necesario para preparar alimentos caseros para mascotas y comenzar a vender, incluso si no sabes nada sobre el tema.</p>
+
+                            </div>
+
+
+
+                            <div class="service-card">
+
+                                <div class="service-img" style="background-image: url('assets/a18.webp')"></div>
+
+                                <h3 class="service-title">Kit Emprendedor de Éxito</h3>
+
+                                <p class="service-desc">Te mostraremos cómo y dónde vender tus recetas para empezar a facturar en grande sin necesidad de salir de casa.</p>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button class="single-next-arrow" id="singleNextBtn" aria-label="Siguiente">
+
+                        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+
+                    </button>
+
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section stack-section" id="nutrition">
+
+            <div class="container">
+
+                <div class="nutrition-title-container" id="nutritionTitleContainer">
+
+                    <h2 class="nutrition-title">¿Sabías que el 85% de las enfermedades graves en perros y gatos se deben a una mala nutrición?</h2>
+
+                </div>
+
+                <div class="nutrition-desc" id="nutritionDesc">
+
+                    <p>Los cuerpos de nuestros perros y gatos <b>no están diseñados para consumir alimentos altamente procesados.</b></p>
+
+                    <br>
+
+                    <p>Por el contrario, <b>alcanzan plenitud y salud</b> cuando los alimentos se preparan de forma natural y fresca, <b>sin conservantes ni aditivos.</b></p>
+
+                    <br>
+
+                    <p>Si sabes de lo que te estoy hablando, este programa es para ti.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section" id="learning">
+
+            <div class="learning-sticky-inner">
+
+                <div class="learning-img-box">
+
+                    <img src="assets/a.webp" alt="Foto Genérica 1:1" class="learning-img">
+
+                </div>
+
+                <h2 class="learning-title-main">¿QUÉ VAS A APRENDER?</h2>
+
+                
+
+                <div class="learning-list">
+
+                    <div class="learning-item">
+
+                        <span>✅</span>
+
+                        <p>Prepara recetas de repostería canina y felina, desarrolladas con sus <b>proporciones exactas y aprobadas</b>.</p>
+
+                    </div>
+
+                    <div class="learning-item">
+
+                        <span>✅</span>
+
+                        <p>Selecciona y utiliza <b>ingredientes que tienes en casa</b> para preparar snacks nutritivos y saludables para tus mascotas.</p>
+
+                    </div>
+
+                    <div class="learning-item">
+
+                        <span>✅</span>
+
+                        <p>Conoce cuáles son los ingredientes que <b>pueden utilizarse</b> y cuáles <b>pueden perjudicar</b>, y mucho, la vida de los peludos.</p>
+
+                    </div>
+
+                    <div class="learning-item">
+
+                        <span>✅</span>
+
+                        <p><b>Mejora la alimentación diaria</b> de perros y gatos.</p>
+
+                    </div>
+
+                    <div class="learning-item">
+
+                        <span>✅</span>
+
+                        <p>Aprende <b>cómo aprovechar uno de los mercados de mayor crecimiento en el mundo</b>, emprendiendo con recetas caseras y naturales para mascotas.</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="learning-btn-box" id="learningBtnBox">
+
+                    <a href="https://pay.hotmart.com/C105838881B?checkoutMode=10" target="_blank" class="btn-cyan-massive">🐾 ¡QUIERO EMPEZAR AHORA MISMO! 🐾</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section stack-section" id="testimonials">
+
+            <div class="container">
+
+                <h2 class="testimonials-title">MIRA EL TESTIMONIO<br>DE QUIENES YA<br><span style="color: #ffffff;">COMPRARON Y APROBARON</span></h2>
+
+                
+
+                <div class="carousel-container-relative">
+
+                    <div class="carousel-wrapper" id="testimonialsWrapper">
+
+                        <div class="carousel-track" id="testimonialsTrack">
+
+                            
+
+                            <div class="proof-img-container">
+
+                                <img src="assets/a1.webp" alt="Testimonio 1" class="proof-img">
+
+                            </div>
+
+                            <div class="proof-img-container">
+
+                                <img src="assets/a2.webp" alt="Testimonio 2" class="proof-img">
+
+                            </div>
+
+                            <div class="proof-img-container">
+
+                                <img src="assets/a3.webp" alt="Testimonio 3" class="proof-img">
+
+                            </div>
+
+                            <div class="proof-img-container">
+
+                                <img src="assets/a4.webp" alt="Testimonio 4" class="proof-img">
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button class="testimonials-arrow" id="testimonialsNextBtn" aria-label="Siguiente">
+
+                        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section stack-section" id="bonus-section">
+
+            <div class="container bonus-inner-content" id="bonusContent">
+
+                <h2 class="bonus-title" id="bonusTitle"><span style="color: #e60000;">Y NO SE DETIENE AHÍ…</span><br>COMPRANDO SOLO HOY<br>TE LLEVARÁS EL<br><span style="color: #ffffff;">KIT EMPRENDEDOR DE ÉXITO<br>Y MÁS 4 BONOS</span></h2>
+
+                
+
+                <div class="carousel-container-relative">
+
+                    <div class="carousel-wrapper" id="bonusWrapper">
+
+                        <div class="carousel-track" id="bonusTrack">
+
+                            
+
+                            <div class="bonus-card">
+
+                                <div class="service-img" style="background-image: url('assets/a13.webp')"></div>
+
+                                <h3 class="service-title">Cómo crear una tienda en Mercado Libre</h3>
+
+                                <p class="service-desc">Guía paso a paso completa para crear una tienda desde cero en Mercado Libre y vender muchos snacks para mascotas allí.</p>
+
+                            </div>
+
+
+
+                            <div class="bonus-card">
+
+                                <div class="service-img" style="background-image: url('assets/a10.webp')"></div>
+
+                                <h3 class="service-title">Cómo registrarte en Google Mi Negocio</h3>
+
+                                <p class="service-desc">Aprende cómo ser encontrado por personas que ya están buscando snacks caninos en tu ciudad.</p>
+
+                            </div>
+
+
+
+                            <div class="bonus-card">
+
+                                <div class="service-img" style="background-image: url('assets/a9.webp')"></div>
+
+                                <h3 class="service-title">Cómo crear una tienda en Instagram</h3>
+
+                                <p class="service-desc">Guía paso a paso completa para crear un Instagram vendedor, una de las mayores herramientas de ventas automáticas que existen en Internet.</p>
+
+                            </div>
+
+
+
+                            <div class="bonus-card">
+
+                                <div class="service-img" style="background-image: url('assets/a11.webp')"></div>
+
+                                <h3 class="service-title">Marketplace Lucrativo</h3>
+
+                                <p class="service-desc">Aprende a usar la tienda de Facebook para anunciar cualquier cosa en tu región cercana sin necesidad de pagar publicidad.</p>
+
+                            </div>
+
+
+
+                            <div class="bonus-card">
+
+                                <div class="service-img" style="background-image: url('assets/a7.webp')"></div>
+
+                                <h3 class="service-title">Cuidados con el perro para principiantes</h3>
+
+                                <p class="service-desc"><b>BONO 1</b> – Ser tutor por primera vez no siempre es una tarea fácil. Pensando en eso, hemos preparado un manual con los principales cuidados que debes tene</p>
+
+                            </div>
+
+
+
+                            <div class="bonus-card">
+
+                                <div class="service-img" style="background-image: url('assets/a6.webp')"></div>
+
+                                <h3 class="service-title">La salud del perro al descubierto</h3>
+
+                                <p class="service-desc"><b>BONO 2</b> – Aprende los principales cuidados que debes tener con tu perro para que sea un animal siempre sano y con una larga vida.</p>
+
+                            </div>
+
+
+
+                            <div class="bonus-card">
+
+                                <div class="service-img" style="background-image: url('assets/a5.webp')"></div>
+
+                                <h3 class="service-title">Entrenamiento básico de perros</h3>
+
+                                <p class="service-desc"><b>BONO 3</b> – Aprenderás la forma más fácil de adiestrar a tu perrito, incluso si no sabes nada sobre el tema.</p>
+
+                            </div>
+
+
+
+                            <div class="bonus-card">
+
+                                <div class="service-img" style="background-image: url('assets/a8.webp')"></div>
+
+                                <h3 class="service-title">Cómo entrenar a tu gato</h3>
+
+                                <p class="service-desc"><b>BONO 4</b> – Te mostraremos que sí es posible entrenar a tu gatito de una manera muy simple y rápida.</p>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button class="single-next-arrow" id="bonusNextBtn" aria-label="Siguiente">
+
+                        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section stack-section" id="pricing-reveal">
+
+            <div class="container" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+
+                
+
+                <div class="price-old-wrapper">
+
+                    <div class="price-old" id="priceOld">
+
+                        DE $67,00
+
+                        <div class="price-old-line" id="priceOldLine"></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="price-new" id="priceNew">POR SOLO<br>$6,90 USD</div>
+
+                
+
+                <div class="checkout-box" id="checkoutBox">
+
+                    <a href="https://pay.hotmart.com/C105838881B?checkoutMode=10" target="_blank" class="btn-cyan-massive">🐾 ¡QUIERO ADQUIRIRLO AHORA MISMO CON TODOS LOS BONOS! 🐾</a>
+
+                    <img src="assets/a23.webp" alt="Compra Segura 300x28" class="trust-badge">
+
+                    
+
+                    <img src="assets/a15.webp" alt="Selo Garantia 1:1" class="guarantee-badge">
+
+                    <h3 class="guarantee-title">¡NOSOTROS ASUMIMOS<br>LOS RIESGOS!</h3>
+
+                    <p class="guarantee-desc">Si no apruebas el contenido del e-book, te devolveremos todo tu dinero. <b>Tendrás 7 días de garantía</b> para probar y aprobar el contenido.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section stack-section" id="faq">
+
+            <div class="container" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 100vh;">
+
+                <div>
+
+                    <h2 class="faq-title">PREGUNTAS FRECUENTES</h2>
+
+                    
+
+                    <div class="faq-list">
+
+                        
+
+                        <div class="faq-item">
+
+                            <div class="faq-question">
+
+                                Después de la compra, ¿cómo hago para acceder al contenido?
+
+                                <span class="faq-icon">+</span>
+
+                            </div>
+
+                            <div class="faq-answer">
+
+                                <p>Inmediatamente después de realizar el pago, recibirás en tu correo electrónico todas las instrucciones de acceso. ¡Es muy fácil!</p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="faq-item">
+
+                            <div class="faq-question">
+
+                                ¿Por qué deberías hacer snacks naturales para vender?
+
+                                <span class="faq-icon">+</span>
+
+                            </div>
+
+                            <div class="faq-answer">
+
+                                <p>Además de ser uno de los mercados de mayor crecimiento en Brasil, también sabemos que los dueños de mascotas no escatiman esfuerzos para consentir a sus hijos de cuatro patas.</p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="faq-item">
+
+                            <div class="faq-question">
+
+                                ¿Tendré alguna garantía?
+
+                                <span class="faq-icon">+</span>
+
+                            </div>
+
+                            <div class="faq-answer">
+
+                                <p>Claro que sí. Asumimos todos los riesgos porque conocemos la calidad de nuestro producto. Aun así, si deseas todo tu dinero de vuelta, podrás solicitarlo dentro de los primeros 7 días después del pago.</p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="faq-item">
+
+                            <div class="faq-question">
+
+                                No entiendo nada (o casi nada) de cocina. ¿Podré hacer las recetas?
+
+                                <span class="faq-icon">+</span>
+
+                            </div>
+
+                            <div class="faq-answer">
+
+                                <p>Con toda certeza. Nuestras recetas son súper fáciles y te ofrecemos todo el paso a paso para su preparación.</p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="faq-item">
+
+                            <div class="faq-question">
+
+                                ¿Por cuánto tiempo tendré acceso al curso?
+
+                                <span class="faq-icon">+</span>
+
+                            </div>
+
+                            <div class="faq-answer">
+
+                                <p>Después de comprarlo, el curso será tuyo por tiempo ilimitado.</p>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="copyright" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #222; text-align: center; color: #555; font-size: 0.8rem;">
+
+                    <p>2026 Studio Luna &copy; Manual Power Pet</p>
+
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <a href="https://wa.me/5511921824150" class="whatsapp-float" id="whatsappBtn" target="_blank" aria-label="WhatsApp">
+
+        <svg viewBox="0 0 24 24">
+
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+
+        </svg>
+
+    </a>
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            
+
+            // 1. Preloader Logic
+
+            const preloader = document.getElementById('preloader');
+
+            const texts = [document.getElementById('preloaderText1')].filter(Boolean);
+
+            let currentText = 0;
+
+
+
+            function cyclePreloaderText() {
+
+                if (currentText < texts.length && texts[currentText]) {
+
+                    texts[currentText].classList.add('active');
+
+                    currentText++;
+
+                    setTimeout(cyclePreloaderText, 800);
+
+                } else {
+
+                    setTimeout(() => {
+
+                        preloader.style.opacity = '0';
+
+                        setTimeout(() => {
+
+                            preloader.style.display = 'none';
+
+                            document.querySelectorAll('#hero .blur-reveal').forEach(el => {
+
+                                el.classList.add('visible');
+
+                            });
+
+                        }, 1000);
+
+                    }, 400);
+
+                }
+
+            }
+
+            setTimeout(cyclePreloaderText, 200);
+
+
+
+
+
+            // 2. Carrossel 1: Seção de Acesso (E-books)
+
+            const wrapper1 = document.getElementById('carouselWrapper');
+
+            const track1 = document.getElementById('carouselTrack');
+
+            const cards1 = document.querySelectorAll('#services .service-card');
+
+            const nextBtn1 = document.getElementById('singleNextBtn');
+
+            let index1 = 0;
+
+            
+
+            function updateCarousel1() {
+
+                const width = cards1[0].offsetWidth;
+
+                const margin = parseFloat(window.getComputedStyle(cards1[0]).marginRight) || 0;
+
+                track1.style.transform = `translateX(-${index1 * (width + margin)}px)`;
+
+                if (index1 === cards1.length - 1) nextBtn1.classList.add('hidden');
+
+                else nextBtn1.classList.remove('hidden');
+
+            }
+
+            nextBtn1.addEventListener('click', () => { if (index1 < cards1.length - 1) { index1++; updateCarousel1(); } });
+
+            let sX1 = 0, eX1 = 0;
+
+            wrapper1.addEventListener('touchstart', (e) => { sX1 = e.touches[0].clientX; }, {passive:true});
+
+            wrapper1.addEventListener('touchend', (e) => { eX1 = e.changedTouches[0].clientX; if (sX1 - eX1 > 35 && index1 < cards1.length - 1) { index1++; updateCarousel1(); } if (eX1 - sX1 > 35 && index1 > 0) { index1--; updateCarousel1(); } }, {passive:true});
+
+
+
+
+
+            // 3. Carrossel 2: Depoimentos (WhatsApp)
+
+            const wrapper2 = document.getElementById('testimonialsWrapper');
+
+            const track2 = document.getElementById('testimonialsTrack');
+
+            const cards2 = document.querySelectorAll('.proof-img-container');
+
+            const nextBtn2 = document.getElementById('testimonialsNextBtn');
+
+            let index2 = 0;
+
+
+
+            function updateCarousel2() {
+
+                const width = cards2[0].offsetWidth;
+
+                const margin = parseFloat(window.getComputedStyle(cards2[0]).marginRight) || 0;
+
+                track2.style.transform = `translateX(-${index2 * (width + margin)}px)`;
+
+                if (index2 === cards2.length - 1) nextBtn2.classList.add('hidden');
+
+                else nextBtn2.classList.remove('hidden');
+
+            }
+
+            nextBtn2.addEventListener('click', () => { if (index2 < cards2.length - 1) { index2++; updateCarousel2(); } });
+
+            let sX2 = 0, eX2 = 0;
+
+            wrapper2.addEventListener('touchstart', (e) => { sX2 = e.touches[0].clientX; }, {passive:true});
+
+            wrapper2.addEventListener('touchend', (e) => { eX2 = e.changedTouches[0].clientX; if (sX2 - eX2 > 35 && index2 < cards2.length - 1) { index2++; updateCarousel2(); } if (eX2 - sX2 > 35 && index2 > 0) { index2--; updateCarousel2(); } }, {passive:true});
+
+
+
+
+
+            // 4. Carrossel 3: Seção Super Bônus (#bonus-section)
+
+            const wrapper3 = document.getElementById('bonusWrapper');
+
+            const track3 = document.getElementById('bonusTrack');
+
+            const cards3 = document.querySelectorAll('.bonus-card');
+
+            const nextBtn3 = document.getElementById('bonusNextBtn');
+
+            let index3 = 0;
+
+
+
+            function updateCarousel3() {
+
+                const width = cards3[0].offsetWidth;
+
+                const margin = parseFloat(window.getComputedStyle(cards3[0]).marginRight) || 0;
+
+                track3.style.transform = `translateX(-${index3 * (width + margin)}px)`;
+
+                if (index3 === cards3.length - 1) nextBtn3.classList.add('hidden');
+
+                else nextBtn3.classList.remove('hidden');
+
+            }
+
+            nextBtn3.addEventListener('click', () => { if (index3 < cards3.length - 1) { index3++; updateCarousel3(); } });
+
+            let sX3 = 0, eX3 = 0;
+
+            wrapper3.addEventListener('touchstart', (e) => { sX3 = e.touches[0].clientX; }, {passive:true});
+
+            wrapper3.addEventListener('touchend', (e) => { eX3 = e.changedTouches[0].clientX; if (sX3 - eX3 > 35 && index3 < cards3.length - 1) { index3++; updateCarousel3(); } if (eX3 - sX3 > 35 && index3 > 0) { index3--; updateCarousel3(); } }, {passive:true});
+
+
+
+
+
+            // Global Resize Handler
+
+            window.addEventListener('resize', () => { updateCarousel1(); updateCarousel2(); updateCarousel3(); });
+
+            updateCarousel1();
+
+            updateCarousel2();
+
+            updateCarousel3();
+
+
+
+
+
+            // 5. Intersection Observer
+
+            const revealElements = document.querySelectorAll('.blur-reveal:not(#hero .blur-reveal)');
+
+            const revealObserver = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
+
+            }, { threshold: 0.02, rootMargin: "0px 0px -20px 0px" });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+
+
+
+
+            // 6. MECÂNICA FAQ (Accordion)
+
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(q => {
+
+                q.addEventListener('click', () => {
+
+                    const item = q.parentElement;
+
+                    const answer = item.querySelector('.faq-answer');
+
+                    const isActive = item.classList.contains('active');
+
+                    
+
+                    document.querySelectorAll('.faq-item').forEach(otherItem => {
+
+                        otherItem.classList.remove('active');
+
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+
+                    });
+
+
+
+                    if (!isActive) {
+
+                        item.classList.add('active');
+
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+
+                    }
+
+                });
+
+            });
+
+
+
+
+
+            // 7. Scroll Animation Engine Sincronizado
+
+            const heroBg = document.querySelector('.hero-bg');
+
+            const nutritionSection = document.getElementById('nutrition');
+
+            const nutritionTitleContainer = document.getElementById('nutritionTitleContainer');
+
+            const nutritionDesc = document.getElementById('nutritionDesc');
+
+            
+
+            const learningSection = document.getElementById('learning');
+
+            const learningItems = document.querySelectorAll('.learning-item');
+
+            const learningBtnBox = document.getElementById('learningBtnBox');
+
+
+
+            const bonusSection = document.getElementById('bonus-section');
+
+            const bonusContent = document.getElementById('bonusContent');
+
+
+
+            const pricingSection = document.getElementById('pricing-reveal');
+
+            const priceOld = document.getElementById('priceOld');
+
+            const priceOldLine = document.getElementById('priceOldLine');
+
+            const priceNew = document.getElementById('priceNew');
+
+            const checkoutBox = document.getElementById('checkoutBox');
+
+
+
+            const whatsappBtn = document.getElementById('whatsappBtn');
+
+
+
+            let bonusRevealed = false;
+
+            let pricingSequenceStarted = false;
+
+
+
+            window.addEventListener('scroll', () => {
+
+                const scrolled = window.scrollY;
+
+                const viewHeight = window.innerHeight;
+
+
+
+                if (scrolled < viewHeight) { heroBg.style.transform = `translateY(${scrolled * 0.35}px)`; }
+
+
+
+                // Mostra Botão WhatsApp apenas fora do Hero
+
+                if (scrolled > viewHeight * 0.8) {
+
+                    whatsappBtn.classList.add('visible');
+
+                } else {
+
+                    whatsappBtn.classList.remove('visible');
+
+                }
+
+
+
+                // Zoom Nutrition
+
+                const rectN = nutritionSection.getBoundingClientRect();
+
+                if (rectN.top <= viewHeight && rectN.top >= 0) {
+
+                    const p = rectN.top / viewHeight;
+
+                    nutritionTitleContainer.style.transform = `scale(${1 + 1.3 * p})`;
+
+                    nutritionDesc.style.opacity = 1 - p;
+
+                    nutritionDesc.style.transform = `translateY(${p * 35}px)`;
+
+                } else if (rectN.top < 0) {
+
+                    nutritionTitleContainer.style.transform = 'scale(1)';
+
+                    nutritionDesc.style.opacity = 1;
+
+                    nutritionDesc.style.transform = 'translateY(0px)';
+
+                }
+
+
+
+                // Stagger Learning List Elements
+
+                const rectL = learningSection.getBoundingClientRect();
+
+                if (rectL.top <= 0) {
+
+                    const totalTrack = learningSection.offsetHeight - viewHeight;
+
+                    const progress = Math.min(Math.max(-rectL.top / totalTrack, 0), 1);
+
+                    
+
+                    if (progress >= 0.05) { learningItems[0].style.opacity = '1'; learningItems[0].style.transform = 'translateX(0)'; }
+
+                    else { learningItems[0].style.opacity = '0'; learningItems[0].style.transform = 'translateX(-15px)'; }
+
+                    if (progress >= 0.18) { learningItems[1].style.opacity = '1'; learningItems[1].style.transform = 'translateX(0)'; }
+
+                    else { learningItems[1].style.opacity = '0'; learningItems[1].style.transform = 'translateX(-15px)'; }
+
+                    if (progress >= 0.31) { learningItems[2].style.opacity = '1'; learningItems[2].style.transform = 'translateX(0)'; }
+
+                    else { learningItems[2].style.opacity = '0'; learningItems[2].style.transform = 'translateX(-15px)'; }
+
+                    if (progress >= 0.44) { learningItems[3].style.opacity = '1'; learningItems[3].style.transform = 'translateX(0)'; }
+
+                    else { learningItems[3].style.opacity = '0'; learningItems[3].style.transform = 'translateX(-15px)'; }
+
+                    if (progress >= 0.57) { learningItems[4].style.opacity = '1'; learningItems[4].style.transform = 'translateX(0)'; }
+
+                    else { learningItems[4].style.opacity = '0'; learningItems[4].style.transform = 'translateX(-15px)'; }
+
+
+
+                    if (progress >= 0.72) { learningBtnBox.style.opacity = '1'; learningBtnBox.style.transform = 'translateY(0)'; }
+
+                    else { learningBtnBox.style.opacity = '0'; learningBtnBox.style.transform = 'translateY(15px)'; }
+
+                }
+
+
+
+                // REVELAÇÃO DO SUPER BÔNUS
+
+                const rectB = bonusSection.getBoundingClientRect();
+
+                if (rectB.top <= 50) { 
+
+                    if (!bonusRevealed) {
+
+                        bonusRevealed = true;
+
+                        bonusContent.style.opacity = '1';
+
+                        bonusContent.style.pointerEvents = 'auto';
+
+                        bonusContent.style.transform = 'translateY(0)';
+
+                    }
+
+                } else if (rectB.top > 150) {
+
+                    bonusRevealed = false;
+
+                    bonusContent.style.opacity = '0';
+
+                    bonusContent.style.pointerEvents = 'none';
+
+                    bonusContent.style.transform = 'translateY(20px)';
+
+                }
+
+
+
+                // TIMING ESTRITO PREÇO
+
+                const rectP = pricingSection.getBoundingClientRect();
+
+                
+
+                if (rectP.top <= viewHeight && rectP.top >= 0) {
+
+                    const progressP = rectP.top / viewHeight;
+
+                    const currentScaleOld = 1 + (1.4 - 1) * progressP;
+
+                    priceOld.style.transform = `scale(${currentScaleOld})`;
+
+                }
+
+
+
+                if (rectP.top <= 0) {
+
+                    priceOld.style.transform = 'scale(1)';
+
+
+
+                    if (!pricingSequenceStarted) {
+
+                        pricingSequenceStarted = true;
+
+
+
+                        setTimeout(() => {
+
+                            priceOldLine.style.width = '100%';
+
+
+
+                            setTimeout(() => {
+
+                                priceNew.style.opacity = '1';
+
+                                priceNew.style.transform = 'translateY(0)';
+
+
+
+                                setTimeout(() => {
+
+                                    checkoutBox.style.opacity = '1';
+
+                                    checkoutBox.style.transform = 'translateY(0)';
+
+                                }, 700);
+
+
+
+                            }, 700);
+
+
+
+                        }, 700);
+
+                    }
+
+                } else if (rectP.top > 150) {
+
+                    pricingSequenceStarted = false;
+
+                    priceOldLine.style.width = '0%';
+
+                    priceNew.style.opacity = '0';
+
+                    priceNew.style.transform = 'translateY(20px)';
+
+                    checkoutBox.style.opacity = '0';
+
+                    checkoutBox.style.transform = 'translateY(20px)';
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
